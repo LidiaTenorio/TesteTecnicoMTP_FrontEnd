@@ -12,7 +12,7 @@
           <label *ngIf="id">EDITAR TAREFA</label>
         </div>
         <div class="input-group mb-3">
-          <input [(ngModel)]="descricaoTarefa" type="text" class="form-control round-input"
+          <input [(ngModel)]="descricaoTarefa" maxlength="150" type="text" class="form-control round-input"
             placeholder="Descrição da tarefa" aria-label="informe a tarefa" aria-describedby="basic-addon2">
           <div class="input-group-append">
             <button *ngIf="!id" style="margin-right: 10px; float: right;" class="btn btn-outline-info round "

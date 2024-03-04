@@ -36,10 +36,7 @@ export class DashboardComponent implements OnInit {
   }  
  
   cadastrarTarefa(){
-    if(this.descricaoTarefa.length > 255){ 
-      return alert("Limite de caracteres excedido!, somente 255 caracteres serão aceitos.")
-    }
-    else if( this.descricaoTarefa ){
+    if( this.descricaoTarefa ){
       this.TarefaVM.descricao = this.descricaoTarefa 
       this._tarefaService.cadastrarTarefa(this.TarefaVM).subscribe({
         next: () => { 
@@ -107,11 +104,7 @@ export class DashboardComponent implements OnInit {
   }
 
   atualizarTarefa(){
-    if(this.descricaoTarefa.length > 255){ 
-      return   alert("Limite de caracteres excedido!, somente x caracteres serão aceitos.")
-    }
-
-    else if( this.id  && this.descricaoTarefa ){
+    if(this.id  && this.descricaoTarefa ){
       this.TarefaVM.descricao = this.descricaoTarefa 
       this.TarefaVM.id = this.id 
       this._tarefaService.AtualizarTarefa(this.TarefaVM).subscribe({
