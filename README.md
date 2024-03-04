@@ -1,27 +1,21 @@
-# TesteTecnicoMTP
+#TesteTecnicoMTP
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+Este projeto foi gerado com Angular CLI versão 13.1.3.
 
-## Development server
+Servidor de Desenvolvimento
+Execute ng serve para iniciar um servidor de desenvolvimento. Acesse http://localhost:4200/. A aplicação será recarregada automaticamente se você modificar qualquer um dos arquivos de origem.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Estrutura de Código
+Execute ng generate component nome-do-componente para gerar um novo componente. Você também pode utilizar ng generate directive|pipe|service|class|guard|interface|enum|module.
 
-## Code scaffolding
+Construção
+Execute ng build para construir o projeto. Os artefatos da construção serão armazenados no diretório dist/.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execução de Testes Unitários
+Execute ng test para executar os testes unitários via Karma.
 
-## Build
+Execução de Testes End-to-End
+Execute ng e2e para executar os testes end-to-end através de uma plataforma de sua escolha. Para usar este comando, você precisa primeiro adicionar um pacote que implementa capacidades de teste end-to-end.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Ajuda Adicional
+Para obter mais ajuda sobre o Angular CLI, utilize ng help ou consulte a página de Visão Geral e Referência de Comandos do Angular CLI.
