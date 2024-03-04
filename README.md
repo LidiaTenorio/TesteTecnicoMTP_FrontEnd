@@ -3,7 +3,7 @@
 Este projeto foi gerado com Angular CLI versão 13.1.3.
 
 ## Servidor de Desenvolvimento
-Execute ng serve para iniciar um servidor de desenvolvimento. Acesse http://localhost:4200/. A aplicação será recarregada automaticamente se você modificar qualquer um dos arquivos de origem.
+Execute ng npm i para instalar os pacotes. Execute ng serve para iniciar um servidor de desenvolvimento. Acesse http://localhost:4200/. A aplicação será recarregada automaticamente se você modificar qualquer um dos arquivos de origem.
 
 ## Estrutura de Código
 Execute ng generate component nome-do-componente para gerar um novo componente. Você também pode utilizar ng generate directive|pipe|service|class|guard|interface|enum|module.
