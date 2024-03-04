@@ -96,6 +96,7 @@ export class DashboardComponent implements OnInit {
             this.descricaoTarefa = response.descricao
             this.id = response.id
             this.TarefaVM =response
+            scrollTo({ top: 0, behavior: 'smooth' })
            },
         error: (error) => { 
             console.error('Erro no componente:', error); 
