@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center main-row">
+    <div class="col-md-12 shadow bg-white">
+      <div class="row colorMTP text-white">
+        <div class="col  p-2">
+          <h4 style="text-align: center;">TESTE TÉCNICO MTP</h4>
+        </div>
+      </div>
+      <div class="row justify-content-between text-white p-2">
+        <div style="margin-top: 30px; margin-bottom: 10px; font-size: 20px; color: #004A6D" class="bold-500">
+          <label *ngIf="!id">CADASTRAR TAREFA</label>
+          <label *ngIf="id">EDITAR TAREFA</label>
+        </div>
+        <div class="input-group mb-3">
+          <input [(ngModel)]="descricaoTarefa" type="text" class="form-control round-input"
+            placeholder="Descrição da tarefa" aria-label="informe a tarefa" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button *ngIf="!id" style="margin-right: 10px; float: right;" class="btn btn-outline-info round "
+              type="button" (click)="cadastrarTarefa()"><i class="fa fa-plus"></i></button>
+            <button *ngIf="id" style="margin-right: 10px; float: right;" class="btn btn-outline-warning round "
+              type="button" (click)="atualizarTarefa()"><i class="fa fa-refresh"></i></button>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="todo-container-ativas">
+        <hr>
+        <ul class="list-group">
+          <li class="list-group-item active colorMTP-info bold-500">TAREFAS ATIVAS
+            <label style="float: right;">Total de tarefas: {{ listasTarefaEmAndamento.length }} </label>
+          </li>
+          <div id="todo-container-ativo" *ngIf="listasTarefaEmAndamento.length > 0; ">
+            <ng-container *ngFor="let item of  listasTarefaEmAndamento">
+              <li style="    background-color: #f0fdff !important;" class="list-group-item">
+                <div>
+                  <label style="margin-left: 13px;     font-size: 22px;" class="form-check-label"
+                    for="flexCheckDefault">
+                    {{item.descricao}}
+                  </label>
+                  <br>
+                  <div class="buttons " style="margin-bottom: 10px;">
+                    <button (click)="deletarTarefa(item.id)" style="margin-right: 10px; float: right;"
+                      class="btn round btn-outline-danger" type="button"><i class="fa fa-trash"></i></button>
+                    <button (click)="editartarefa(item.id)" class="round btn btn-outline-warning"
+                      style="margin-right: 10px; float: right;" type="button"><i class="fa fa-pen"></i></button>
+                    <button (click)="concluirTarefa(item.id)" style="margin-right: 10px; float: right; "
+                      class="round btn btn-outline-success" type="button"><i class="fa fa-check"></i></button>
+                  </div>
+                  <label style="margin-left: 13px;     font-size: 18px;" class="form-check-label"
+                    for="flexCheckDefault">
+                    Data Criação:
+                    <span class="badge bg-info text-white"> {{item.dataCadastro | date:"dd/MM/YYYY"}}</span>
+                  </label>
+                  <label *ngIf="item.dataAtualizacao" style="margin-left: 30px;     font-size: 18px;"
+                    class="form-check-label" for="flexCheckDefault">
+                    Data Atualização:
+                    <span class="badge bg-info text-white"> {{item.dataAtualizacao | date:"dd/MM/YYYY"}}</span>
+                  </label>
+                </div>
+              </li>
+            </ng-container>
+          </div>
+          <div class="justify-content-center" *ngIf="listasTarefaEmAndamento.length == 0;">
+            <h4 class="text-center"> <i class="fa fa-check"></i> Nenhuma tarefa cadastrada!</h4>
+          </div>
+        </ul>
+
+      </div>
+      <hr>
+      <div id="todo-container-finalizado">
+        <ul class="list-group">
+          <li class="list-group-item active colorMTP-info  bold-500">TAREFAS CONCLUÍDAS
+            <label style="float: right;">Total de tarefas: {{ listasTarefaConcluidas.length }} </label>
+          </li>
+          <div id="todo-container-ativo" *ngIf="listasTarefaConcluidas.length > 0; ">
+            <ng-container *ngFor="let item of  listasTarefaConcluidas">
+              <li style="    background-color: #f0fdff !important;" class="list-group-item">
+                <div>
+                  <label style="margin-left: 13px;     font-size: 22px;" class="form-check-label"
+                    for="flexCheckDefault">
+                    {{item.descricao}}
+                  </label>
+                  <br>
+                  <div class="buttons " style="margin-bottom: 10px;">
+                    <button (click)="deletarTarefa(item.id)" style="margin-right: 10px; float: right;"
+                      class="btn round btn-outline-danger" type="button"><i class="fa fa-trash"></i></button>
+                  </div>
+                  <label style="margin-left: 13px;     font-size: 18px;" class="form-check-label"
+                    for="flexCheckDefault">
+                    Data Criação:
+                    <span class="badge bg-info text-white"> {{item.dataCadastro | date:"dd/MM/YYYY"}}</span>
+                  </label>
+                  <label *ngIf="item.dataAtualizacao" style="margin-left: 30px;     font-size: 18px;"
+                    class="form-check-label" for="flexCheckDefault">
+                    Data Atualização:
+                    <span class="badge bg-info text-white"> {{item.dataAtualizacao | date:"dd/MM/YYYY"}}</span>
+                  </label>
+                </div>
+              </li>
+            </ng-container>
+          </div>
+          <div class="justify-content-center" *ngIf="listasTarefaConcluidas.length == 0;">
+            <h4 class="text-center"> <i class="fa fa-check"></i> Nenhuma tarefa cadastrada!</h4>
+          </div>
+        </ul>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>

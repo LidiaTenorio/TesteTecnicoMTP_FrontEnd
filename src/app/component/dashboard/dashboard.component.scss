@@ -1,0 +1,32 @@
+.main-row{
+    height: 100vh;
+  }
+  .main-col{
+    max-width: 500px;
+    min-height: 300px;
+  }
+  .todo-done{
+    text-decoration: line-through;
+  }
+  .badge-width{
+    width: 102% !important;
+  }
+  .round{
+    border-radius: 100% !important;
+  }
+
+  .round-input{
+    border-bottom-right-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    margin-right: 12px  !important;
+  }
+  .colorMTP{
+   background-color:  #004A6D !important;
+  }
+  .colorMTP-info{
+   background-color:  #00ABCB !important;
+   border: none !important;
+  }
+  .bold-500{
+     font-weight: 500 !important;
+  }
